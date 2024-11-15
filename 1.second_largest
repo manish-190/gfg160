@@ -1,0 +1,21 @@
+class Solution {
+    public int getSecondLargest(int[] arr) {
+        // Code Here
+       if(arr.length < 2){
+           return -1;
+       }
+       
+       Arrays.sort(arr);
+       int max = arr[arr.length -1];
+       int sec_max = -1;
+       
+       for(int i = arr.length -2; i>= 0; i--){
+           if(arr[i] != max){
+               sec_max = arr[i];
+               break;
+           }
+       }
+       
+       return sec_max;
+    }
+}
