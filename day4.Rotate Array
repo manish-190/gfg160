@@ -1,0 +1,19 @@
+class Solution {
+    static void rotateArr(int arr[], int d) {
+        int n = arr.length;
+        d = d % n;
+        int[] store = new int[n];
+
+        for (int i = 0; i < n - d; i++) {
+            store[i] = arr[i + d];
+        }
+
+        for (int i = n - d; i < n; i++) {
+            store[i] = arr[i - (n - d)];
+        }
+
+        for (int i = 0; i < n; i++) {
+            arr[i] = store[i];
+        }
+    }
+}
