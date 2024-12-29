@@ -1,0 +1,17 @@
+
+class Solution {
+    public ArrayList<Integer> intersectionWithDuplicates(int[] a, int[] b) {
+        Set<Integer> setA = new HashSet<>();
+        Set<Integer> setB = new HashSet<>();
+        for (int num : a) {
+            setA.add(num);
+        }
+        for (int num : b) {
+            setB.add(num);
+        }
+        setA.retainAll(setB);
+        ArrayList<Integer> result = new ArrayList<>(setA);
+        Collections.sort(result);
+        return result;
+    }
+}
